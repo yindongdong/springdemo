@@ -48,6 +48,7 @@ public class IndexAction {
 		view.setViewName("index");
 		view.addObject("name", "张三");
 		view.addObject("mobile", "13000000001");
+		view.addObject("userAccount", "zhangsan");
 		
 		return view;
 		
