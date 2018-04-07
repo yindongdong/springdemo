@@ -47,6 +47,7 @@ public class IndexAction {
 		ModelAndView view = new ModelAndView();
 		view.setViewName("index");
 		view.addObject("name", "张三");
+		view.addObject("mobile", "13000000001");
 		
 		return view;
 		
