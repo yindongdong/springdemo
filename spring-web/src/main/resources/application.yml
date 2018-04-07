@@ -1,0 +1,53 @@
+#服务名称
+spring:
+  application:
+    name: spring-web
+  thymeleaf:
+    prefix: classpath:/templates/ # 定位模板的目录
+    suffix: .html # 给返回的页面添加后缀名
+    cache: false
+  datasource:
+    url: jdbc:mysql://192.168.253.110:3306/spring?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: a123456
+    driverClassName: com.mysql.jdbc.Driver
+    #连接池的配置信息
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000    
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL    
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20    
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    logSlowSql: true
+    druidAdminUserName: admin
+    druidAdminPassword: a123456
+    
+#Mybatis  
+#mybatis:
+#  config-locations: classpath:mybatis/mybatis-config.xml  
+#  mapper-locations: classpath:mybatis/mapper/*.xml  
+#  mybatis.type-aliases-package: com.damionew.website.model  
+
+    
+ #端口号
+server:
+  port: 2003
+ 
+#注册中心配置 
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://admin:a123456@192.168.1.110:1110/eureka/
+      defaultZone: http://admin:a123456@192.168.253.110:1110/spring-eureka/eureka/
+    #register-with-eureka: false #是否向服务注册中心注册自己
+  
+  
+

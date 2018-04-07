@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "sprcore.ribbon.list-of-servers",
+    "type": "java.lang.String",
+    "description": "A description for 'sprcore.ribbon.list-of-servers'"
+  },
+  {
+    "name": "sprapi.ribbon.list-of-servers",
+    "type": "java.lang.String",
+    "description": "A description for 'sprapi.ribbon.list-of-servers'"
+  },
+  {
+    "name": "hostname",
+    "type": "java.lang.String",
+    "description": "A description for 'hostname'"
+  },
+  {
+    "name": "core.ribbon.list-of-servers",
+    "type": "java.lang.String",
+    "description": "A description for 'core.ribbon.list-of-servers'"
+  },
+  {
+    "name": "api.ribbon.list-of-servers",
+    "type": "java.lang.String",
+    "description": "A description for 'api.ribbon.list-of-servers'"
+  },
+  {
+    "name": "ribbon.eureka.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'ribbon.eureka.enabled'"
+  }
+]}

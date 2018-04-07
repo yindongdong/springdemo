@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: zuul-gateway
+    
+#端口号
+server:
+  port: 8080
+
+hostname: 192.168.1.110
+     
+
+zuul:
+  routes:
+    core:
+      path: /core/**
+      stripPrefix: true
+      url: http://${hostname}:2002
+    api:
+      serviceId: api    
+      path: /api/**
+      stripPrefix: true
+    
+core:
+  ribbon:
+    listOfServers: http://192.168.1.110:2001
+
+api:
+  ribbon:
+    listOfServers: http://192.168.1.110:2002,http://192.168.1.110:2001
+    
+ribbon:
+  eureka:
+    enabled: false
+    
+#注册中心配置 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:a123456@192.168.1.110:1110/eureka/  
+      
+        
