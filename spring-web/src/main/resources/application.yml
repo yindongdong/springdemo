@@ -2,10 +2,14 @@
 spring:
   application:
     name: spring-web
-  thymeleaf:
-    prefix: classpath:/templates/ # 定位模板的目录
-    suffix: .html # 给返回的页面添加后缀名
-    cache: false
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/views/ # 定位模板的目录 classpath:/templates/
+#      suffix: .html # 给返回的页面添加后缀名
+#      cache: false
+#  view:
+#     prefix: /WEB-INF/views/
+
   datasource:
     url: jdbc:mysql://192.168.253.110:3306/spring?useUnicode=true&characterEncoding=UTF-8
     username: root
@@ -29,6 +33,19 @@ spring:
     logSlowSql: true
     druidAdminUserName: admin
     druidAdminPassword: a123456
+
+beetl:
+  templatesPath: /WEB-INF/views/ #classpath:
+  prefix: /WEB-INF/views/
+  suffix: .html
+  
+
+#kafka    
+  kafka:
+    bootstrap-servers: 192.168.253.110:9092,192.168.253.111:9092
+    consumer:
+      group-id: foo
+      auto-offset-reset: earliest
     
 #Mybatis  
 #mybatis:
@@ -46,7 +63,7 @@ eureka:
   client:
     serviceUrl:
       #defaultZone: http://admin:a123456@192.168.1.110:1110/eureka/
-      defaultZone: http://admin:a123456@192.168.253.110:1110/spring-eureka/eureka/
+      defaultZone: http://admin:a123456@192.168.253.110:9001/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9002/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9003/spring-eureka/eureka/
     #register-with-eureka: false #是否向服务注册中心注册自己
   
   

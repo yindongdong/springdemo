@@ -8,8 +8,6 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
 import com.winter.springzuul.zuulfilters.AddResponseHeaderFilter;
-import com.winter.springzuul.zuulfilters.ModifyResponseBodyFilter;
-import com.winter.springzuul.zuulfilters.ModifyResponseDataStreamFilter;
 import com.winter.springzuul.zuulfilters.PrefixRequestEntityFilter;
 import com.winter.springzuul.zuulfilters.QueryParamPortPreFilter;
 import com.winter.springzuul.zuulfilters.QueryParamServiceIdPreFilter;
