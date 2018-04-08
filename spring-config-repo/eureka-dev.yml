@@ -1,16 +1,8 @@
 #注册中心配置
----
-spring:
-  profiles: cloudpeers
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://admin:a123456@192.168.253.110:9001/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9002/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9003/spring-eureka/eureka/
 
----
-spring:
-  profiles: docker
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+
