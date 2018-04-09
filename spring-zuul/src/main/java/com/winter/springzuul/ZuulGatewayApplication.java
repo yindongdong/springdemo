@@ -1,11 +1,13 @@
 package com.winter.springzuul;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import com.winter.springzuul.zuulfilters.AddResponseHeaderFilter;
 import com.winter.springzuul.zuulfilters.PrefixRequestEntityFilter;
@@ -15,6 +17,8 @@ import com.winter.springzuul.zuulfilters.UppercaseRequestEntityFilter;
 
 @EnableZuulProxy
 @SpringBootApplication
+@Configuration
+@EnableAutoConfiguration
 public class ZuulGatewayApplication extends SpringBootServletInitializer{
 	
 	@Bean

@@ -1,0 +1,24 @@
+#服务名称
+spring:
+  application:
+    name: spring-config-server
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yindongdong/spring-config-repo.git
+          basedir: target/config
+          search-paths: /**
+    
+ #端口号
+server:
+  port: 7001
+ 
+#注册中心配置 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:a123456@192.168.253.110:9001/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9002/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9003/spring-eureka/eureka/
+
+

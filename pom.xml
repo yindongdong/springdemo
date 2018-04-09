@@ -45,6 +45,9 @@
 		<module>spring-eureka</module>
 		<module>spring-zuul</module>
     <module>spring-web</module>
+    <module>spring-config</module>
+    <module>config-repo</module>
+    <module>spring-config-repo</module>
   </modules>
 
 	<build>

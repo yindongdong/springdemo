@@ -2,14 +2,8 @@
 spring:
   application:
     name: spring-api
-    
+        
  #端口号
 server:
   port: 2002
  
-#注册中心配置 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://admin:a123456@192.168.1.110:1110/eureka/
-

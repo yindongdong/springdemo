@@ -1,28 +1,28 @@
-package com.winter.web;
+package com.winter.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 
-@ImportResource("classpath:spring-beetl.xml")
-@EnableDiscoveryClient
-@SpringBootApplication
 @Configuration
 @EnableAutoConfiguration
-public class SpringWebApplication extends SpringBootServletInitializer {
+@EnableDiscoveryClient
+@EnableConfigServer
+@EnableEurekaClient
+public class SpringConfigServerApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringWebApplication.class, args);
+		SpringApplication.run(SpringConfigServerApplication.class, args);
 	}
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(SpringWebApplication.class);
+		return application.sources(SpringConfigServerApplication.class);
 	}
 
 }
