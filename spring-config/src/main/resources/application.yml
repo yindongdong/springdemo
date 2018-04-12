@@ -2,6 +2,11 @@
 spring:
   application:
     name: spring-config-server
+    hostname: 192.168.1.110
+#一个tomcat部署多个项目需指定domain    
+  jmx:
+    default-domain: spring-config-server-domain
+    
     
   cloud:
     config:
@@ -17,6 +22,8 @@ server:
  
 #注册中心配置 
 eureka:
+  instance:
+    hostname: ${spring.application.hostname}
   client:
     serviceUrl:
       defaultZone: http://admin:a123456@192.168.253.110:9001/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9002/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9003/spring-eureka/eureka/

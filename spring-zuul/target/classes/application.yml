@@ -10,15 +10,17 @@ hostname: 192.168.1.110
      
 
 zuul:
+  #strip-prefix: false 
   routes:
     core:
       path: /core/**
-      stripPrefix: true
+      stripPrefix: false
       url: http://${hostname}:2002
     api:
-      serviceId: api    
+#      serviceId: api    
       path: /api/**
-      stripPrefix: true
+      stripPrefix: false
+      url: http://192.168.253.110:9001
     
 core:
   ribbon:
@@ -28,14 +30,15 @@ api:
   ribbon:
     listOfServers: http://192.168.1.110:2002,http://192.168.1.110:2001
     
-ribbon:
-  eureka:
-    enabled: true
-    
-#注册中心配置 
+#ribbon:
+#  eureka:
+#    enabled: false
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:a123456@192.168.253.110:9001/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9002/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9003/spring-eureka/eureka/
-      
+      defaultZone: http://admin:a123456@192.168.253.110:9002/spring-eureka/eureka/,http://admin:a123456@192.168.253.110:9003/spring-eureka/eureka/
+
+    
+   
         

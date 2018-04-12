@@ -2,8 +2,12 @@
 spring:
   application:
     name: spring-web
-
- #端口号
+    hostname: 192.168.1.110
+  #一个tomcat部署多个项目需指定domain    
+  jmx:
+    default-domain: spring-web-domain
+    
+#端口号
 server:
   port: 2003
   

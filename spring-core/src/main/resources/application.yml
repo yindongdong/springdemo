@@ -2,7 +2,10 @@
 spring:
   application:
     name: spring-core
-    
+  #一个tomcat部署多个项目需指定domain    
+  jmx:
+    default-domain: pring-config-server-domain
+        
  #端口号
 server:
   port: 2001

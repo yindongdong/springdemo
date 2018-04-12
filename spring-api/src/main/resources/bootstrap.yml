@@ -1,8 +1,8 @@
 spring:
   cloud:
     config:
-      uri: http://192.168.1.110:7001
+      uri: http://192.168.253.110:9002/spring-config/
       label: master
       profile: dev
-      name: eureka,myww
+      name: eureka
       
